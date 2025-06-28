@@ -1,133 +1,103 @@
-# Unity Scene Replica - JSON to Three.js
+# 🌐 3D Spatial Reasoning Web System
 
-A web application that recreates Unity 3D object placement in Three.js from JSON schema. Provides 1:1 accurate positioning between Unity and web visualization.
+A **standalone 3D web application** that renders Unity-equivalent spatial positioning and layouts using Three.js. Professional-grade 3D visualization that runs directly in your browser.
 
-## Features
+**🎯 No Unity required** - fully independent 3D system with pixel-perfect spatial accuracy.
 
-- Unity-compatible coordinate system conversion
-- Support for both Euler angles and quaternion rotations
-- Real-time 3D scene visualization
-- File drag-and-drop JSON loading
-- Orbit camera controls
-- Object color customization
-- Floating text labels above objects
-- **Unity-style coordinate gizmo** (top-right corner showing X/Y/Z axes)
-- **World grid system** (major and minor grid lines for spatial reference)
+![3D Scene Demo](https://img.shields.io/badge/Demo-Live%203D%20Scene-blue?style=for-the-badge)
 
-## Usage
+## ✨ Key Features
 
-1. Open `index.html` in a web browser
-2. Click "Choose File" and select a JSON scene file
-3. Click "Load Scene" to visualize the objects
-4. Use mouse to orbit around the scene (left-click drag, scroll to zoom)
+- 🎮 **Unity-Equivalent Rendering** - Perfect coordinate system matching
+- 📐 **Precise 3D Positioning** - Millimeter-accurate spatial placement  
+- 🎯 **All Primitive Types** - Cube, Sphere, Capsule, Cylinder, Plane, Quad
+- 📷 **Advanced Camera Controls** - Top/Front/Side view presets + orbit controls
+- 🔄 **JSON Scene Format** - Simple, flexible 3D scene definition
+- ⚡ **Instant Loading** - No installation, runs in any modern browser
 
-## JSON Schema
+## 🚀 Quick Start
 
-The JSON format is Unity-compatible with the following structure:
+1. **Open** `index.html` in your browser
+2. **Click** "Load Sample Scene" to see it in action
+3. **Navigate** with mouse controls or camera view buttons
+4. **Load** your own JSON scenes or create new ones
+
+```bash
+# Clone and run
+git clone <repo-url>
+cd spatial-reasoning
+open index.html
+```
+
+## 📊 JSON Scene Format
 
 ```json
 {
-  "scene": {
-    "name": "Scene Name",
-    "version": "1.0"
-  },
+  "scene": { "name": "My 3D Scene" },
   "objects": [
     {
-      "name": "Object Name",
-      "position": { "x": 0, "y": 0, "z": 0 },
-      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "name": "RedCube",
+      "model": "Cube",
+      "position": { "x": 0, "y": 1, "z": 0 },
+      "rotation": { "x": 0, "y": 45, "z": 0 },
       "scale": { "x": 1, "y": 1, "z": 1 },
-      "bounds": { "x": 1, "y": 1, "z": 1 },
-      "color": "#ff6600",
-      "text": "LABEL"
+      "color": "#ff0000",
+      "text": "CUBE"
     }
   ]
 }
 ```
 
-### Transform Properties
+## 🎯 Use Cases
 
-- **position**: Vector3 world position (Unity units)
-- **rotation**: Euler angles in degrees OR quaternion (x,y,z,w)
-- **scale**: Vector3 local scale multipliers
-- **bounds**: Vector3 object dimensions (creates box geometry)
-- **color**: (Optional) Object color - hex (#ff6600), named (red, blue), or RGB
-- **text**: (Optional) Floating text label displayed above the object
+- **Spatial Planning** - Architectural layouts, object placement
+- **Data Visualization** - 3D scatter plots, geographic data  
+- **Game Development** - Level prototyping, coordinate validation
+- **Education** - 3D coordinate system teaching, spatial reasoning
 
-### Rotation Formats
+## 📱 Controls
 
-**Euler Angles (degrees):**
-```json
-"rotation": { "x": 45, "y": 90, "z": 0 }
+| Action | Control |
+|--------|---------|
+| **Orbit** | Left-click + drag |
+| **Pan** | Right-click + drag |
+| **Zoom** | Scroll wheel |
+| **Top View** | Top button |
+| **Front View** | Front button |  
+| **Side View** | Side button |
+
+## 🔧 System Capabilities
+
+✅ **Unity Coordinate System** - Y-up, Z-forward, exact unit conversion  
+✅ **Perfect Pivot Points** - Center-based object positioning  
+✅ **10x10 Plane Support** - Matches Unity's default plane scaling  
+✅ **Euler & Quaternion** - Both rotation formats supported  
+✅ **Real-time Performance** - 60fps smooth navigation  
+✅ **Cross-platform** - Desktop, tablet, mobile browsers  
+
+## 📁 Project Structure
+
+```
+├── index.html           # Main 3D web application
+├── scene.js             # 3D engine and rendering logic
+├── style.css            # Interface styling
+├── field-scene.json     # Complex example scene
+├── unity-c#-code/       # Optional Unity integration tools
+└── INSTRUCTIONS.md      # Complete documentation
 ```
 
-**Quaternion:**
-```json
-"rotation": { "x": 0.146, "y": 0.354, "z": 0.146, "w": 0.923 }
-```
+## 🔄 Optional Unity Integration
 
-### Color Formats
+While the web system is fully standalone, optional Unity integration is available:
 
-**Hex Colors:**
-```json
-"color": "#ff6600"
-```
+- **Export** Unity scenes to JSON format
+- **Import** JSON scenes back into Unity
+- **Round-trip workflow** for Unity users
 
-**Named Colors:**
-```json
-"color": "red"
-"color": "blue"
-"color": "green"
-```
+*See `unity-c#-code/` folder and INSTRUCTIONS.md for details.*
 
-**RGB Colors:**
-```json
-"color": "rgb(255, 102, 0)"
-```
+## 📚 Documentation
 
-### Text Labels
-
-Floating text labels appear above objects and move with them:
-```json
-"text": "My Object Name"
-```
-
-- Labels automatically position above the object based on its bounds and scale
-- Text is rendered on a semi-transparent background for readability
-- Labels face the camera and scale appropriately
-
-### Coordinate System & Navigation
-
-**Unity-Style Gizmo:**
-- Appears in the top-right corner of the viewport
-- Red arrow: X-axis (right)
-- Green arrow: Y-axis (up)  
-- Blue arrow: Z-axis (forward in Unity)
-- Rotates with your camera view to show current orientation
-
-**World Grid:**
-- Major grid lines every 10 units (darker)
-- Minor grid lines every 2 units (lighter)
-- Helps visualize object positioning and scale
-- Grid is centered at world origin (0,0,0)
-
-## Coordinate System Conversion
-
-The system automatically converts between Unity and Three.js coordinate systems:
-- Unity: Left-handed, Z-forward
-- Three.js: Right-handed, Z-toward viewer
-- Z-coordinate is automatically flipped for accurate placement
-
-## Testing
-
-1. Load `example-scene.json` to see a sample scene
-2. Create your own JSON files using the schema above
-3. Export transform data from Unity and format as JSON
-
-## Unity Export Tips
-
-To create compatible JSON from Unity:
-1. Get `transform.position` for position
-2. Get `transform.eulerAngles` or `transform.rotation` for rotation
-3. Get `transform.localScale` for scale
-4. Get collider or renderer bounds for bounds 
+- **[Complete Instructions](INSTRUCTIONS.md)** - Full system documentation
+- **[Example Scene](field-scene.json)** - Simple 3D scene example
+- **JSON Format** - Detailed schema in INSTRUCTIONS.md
