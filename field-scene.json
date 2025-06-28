@@ -1,0 +1,164 @@
+{
+  "scene": {
+      "name": "Exported Scene",
+      "description": "Scene exported from Unity"
+  },
+  "objects": [
+      {
+          "name": "Plane",
+          "model": "Plane",
+          "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "bounds": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "color": "#FFFFFF",
+          "text": "PLANE"
+      },
+      {
+          "name": "Cylinder",
+          "model": "Cylinder",
+          "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "bounds": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "color": "#FFFFFF",
+          "text": "CYLINDER"
+      },
+      {
+          "name": "Cylinder (1)",
+          "model": "Cylinder",
+          "position": {
+              "x": -5.0,
+              "y": 0.0,
+              "z": 5.1699981689453129
+          },
+          "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "bounds": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "color": "#FFFFFF",
+          "text": "CYLINDER (1)"
+      },
+      {
+          "name": "Cylinder (2)",
+          "model": "Cylinder",
+          "position": {
+              "x": 5.970001220703125,
+              "y": 0.0,
+              "z": -6.030000686645508
+          },
+          "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "bounds": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "color": "#FFFFFF",
+          "text": "CYLINDER (2)"
+      },
+      {
+          "name": "Cylinder (3)",
+          "model": "Cylinder",
+          "position": {
+              "x": 5.970001220703125,
+              "y": 2.690000057220459,
+              "z": -6.030000686645508
+          },
+          "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "bounds": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+          },
+          "color": "#0010E7",
+          "text": "CYLINDER (3)"
+      },
+      {
+          "name": "Sphere",
+          "model": "Sphere",
+          "position": {
+              "x": -6.099999904632568,
+              "y": 0.0,
+              "z": -6.369999885559082
+          },
+          "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+          },
+          "scale": {
+              "x": 2.3965001106262209,
+              "y": 2.3965001106262209,
+              "z": 2.3965001106262209
+          },
+          "bounds": {
+              "x": 2.3965001106262209,
+              "y": 2.3965001106262209,
+              "z": 2.3965001106262209
+          },
+          "color": "#FFD900",
+          "text": "SPHERE"
+      }
+  ]
+}

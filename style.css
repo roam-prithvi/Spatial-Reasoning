@@ -39,6 +39,32 @@ header p {
     display: flex;
     gap: 15px;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.camera-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto;
+    padding-left: 15px;
+    border-left: 1px solid #555;
+}
+
+.control-label {
+    font-size: 12px;
+    color: #aaa;
+    margin-right: 5px;
+}
+
+.camera-controls button {
+    padding: 6px 12px;
+    background: #555;
+    font-size: 12px;
+}
+
+.camera-controls button:hover {
+    background: #666;
 }
 
 input[type="file"] {

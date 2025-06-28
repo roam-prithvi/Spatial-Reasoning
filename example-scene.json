@@ -6,6 +6,7 @@
   "objects": [
     {
       "name": "Ground",
+      "model": "Plane",
       "position": { "x": 0, "y": 0, "z": 0 },
       "rotation": { "x": 0, "y": 0, "z": 0 },
       "scale": { "x": 10, "y": 0.1, "z": 10 },
@@ -13,6 +14,7 @@
     },
     {
       "name": "Cube_01",
+      "model": "Cube",
       "position": { "x": 2, "y": 1, "z": 3 },
       "rotation": { "x": 0, "y": 45, "z": 0 },
       "scale": { "x": 1, "y": 1, "z": 1 },
@@ -20,6 +22,7 @@
     },
     {
       "name": "Cube_02",
+      "model": "Cube",
       "position": { "x": -3, "y": 0.5, "z": -2 },
       "rotation": { "x": 15, "y": 0, "z": 30 },
       "scale": { "x": 1.5, "y": 0.5, "z": 2 },
@@ -27,6 +30,7 @@
     },
     {
       "name": "Tower",
+      "model": "Cylinder",
       "position": { "x": 0, "y": 2.5, "z": 0 },
       "rotation": { "x": 0, "y": 0, "z": 0 },
       "scale": { "x": 0.8, "y": 5, "z": 0.8 },
@@ -34,6 +38,7 @@
     },
     {
       "name": "Quaternion_Rotated",
+      "model": "Sphere",
       "position": { "x": 4, "y": 1, "z": -4 },
       "rotation": { "x": 0.146, "y": 0.354, "z": 0.146, "w": 0.923 },
       "scale": { "x": 1, "y": 2, "z": 1 },
