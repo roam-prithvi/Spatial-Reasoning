@@ -1,0 +1,35 @@
+{
+  "scene": {
+    "name": "Unity Playground Scene",
+    "description": "Comprehensive test scene showcasing colors and text labels"
+  },
+  "objects": [
+    {
+      "name": "Ground_Platform",
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "scale": { "x": 15, "y": 0.2, "z": 15 },
+      "bounds": { "x": 15, "y": 0.2, "z": 15 },
+      "color": "#444444",
+      "text": "GROUND"
+    },
+    {
+      "name": "Red_Cube",
+      "position": { "x": 10, "y": 10, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "scale": { "x": 1, "y": 1, "z": 1 },
+      "bounds": { "x": 1, "y": 1, "z": 1 },
+      "color": "#ff6600",
+      "text": "RED CUBE"
+    },
+    {
+      "name": "Blue_Cube",
+      "position": { "x": -10, "y": 0, "z": 0 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "scale": { "x": 2, "y": 2, "z": 100 },
+      "bounds": { "x": 1, "y": 1, "z": 1 },
+      "color": "#0066ff",
+      "text": "BLUE CUBE"
+    }
+  ]
+} 
