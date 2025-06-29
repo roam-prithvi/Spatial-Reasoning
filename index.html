@@ -19,6 +19,14 @@
             <button id="loadScene">Load File</button>
             <button id="clearScene">Clear Scene</button>
             
+            <div class="json-paste-section">
+                <button id="togglePaste">Paste JSON ▼</button>
+                <div id="pasteArea" style="display: none;">
+                    <textarea id="jsonPaste" placeholder="Paste your JSON scene data here..."></textarea>
+                    <button id="loadPasted">Load Pasted JSON</button>
+                </div>
+            </div>
+            
             <div class="camera-controls">
                 <span class="control-label">Camera Views:</span>
                 <button id="topView">Top Down</button>

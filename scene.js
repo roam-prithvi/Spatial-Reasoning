@@ -268,6 +268,43 @@ class UnitySceneRenderer {
             this.clearScene();
         });
         
+        // Toggle paste area
+        document.getElementById('togglePaste').addEventListener('click', () => {
+            const pasteArea = document.getElementById('pasteArea');
+            const toggleBtn = document.getElementById('togglePaste');
+            if (pasteArea.style.display === 'none') {
+                pasteArea.style.display = 'flex';
+                toggleBtn.textContent = 'Paste JSON ▲';
+            } else {
+                pasteArea.style.display = 'none';
+                toggleBtn.textContent = 'Paste JSON ▼';
+            }
+        });
+        
+        // Load pasted JSON
+        document.getElementById('loadPasted').addEventListener('click', () => {
+            const jsonText = document.getElementById('jsonPaste').value.trim();
+            if (jsonText) {
+                try {
+                    // Remove any potential invisible characters
+                    const cleanedJson = jsonText.replace(/[\u200B-\u200D\uFEFF]/g, '');
+                    const jsonData = JSON.parse(cleanedJson);
+                    this.createSceneFromJson(jsonData);
+                    // Close paste area after successful load
+                    document.getElementById('pasteArea').style.display = 'none';
+                    document.getElementById('togglePaste').textContent = 'Paste JSON ▼';
+                    // Clear the textarea
+                    document.getElementById('jsonPaste').value = '';
+                } catch (error) {
+                    alert('Invalid JSON format. Please check your JSON syntax.\n\nError: ' + error.message);
+                    console.error('JSON parse error:', error);
+                    console.error('JSON text:', jsonText);
+                }
+            } else {
+                alert('Please paste JSON data first.');
+            }
+        });
+        
         // Camera view buttons
         document.getElementById('topView').addEventListener('click', () => {
             this.setCameraView('top');
@@ -481,10 +518,12 @@ class UnitySceneRenderer {
                 return new THREE.CylinderGeometry(radiusTop, radiusBottom, b.y, 16);
             
             case "capsule":
+                // CapsuleGeometry doesn't exist in Three.js r128, use cylinder as approximation
                 const capsuleRadius = Math.max(b.x, b.z) / 2;
                 const capsuleHeight = b.y;
-                console.log(`Creating CapsuleGeometry with radius: ${capsuleRadius}, height: ${capsuleHeight}`);
-                return new THREE.CapsuleGeometry(capsuleRadius, capsuleHeight - (capsuleRadius * 2), 8, 16);
+                console.log(`Creating Capsule (as Cylinder) with radius: ${capsuleRadius}, height: ${capsuleHeight}`);
+                // Use a cylinder with rounded appearance
+                return new THREE.CylinderGeometry(capsuleRadius, capsuleRadius, capsuleHeight, 16, 1);
             
             case "plane":
                 // Unity's default plane is 10x10 units
